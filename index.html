@@ -1,12 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
     <title>Akbar Rayensyah</title>
+
+    <style>
+        body {
+            background-image: url('assets/img/bg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .card_circle_first {
+            width: 265px;
+            height: 265px;
+            border-radius: 50%;
+            background-color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        .card_circle {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+        }
+
+        .img_me {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .name_card {
+            position: absolute;
+            top: 72%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Poppins', sans-serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #fff;
+            /* text-transform: uppercase; */
+            text-align: center;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 30px;
+            color: #fff;
+            cursor: pointer;
+            z-index: 999;
+        }
+
+        .sub_menu_pop_up {
+            position: absolute;
+            top: 25px;
+            left: 50px;
+            width: 100px;
+            height: 100px;
+            /* rounded */
+            border-radius: 0px 20px 20px 20px;
+            background-color: #fff;
+            z-index: 999;
+        }
+    </style>
 </head>
+
 <body>
-  <h5>Hello World!</h5>
+    <div class="content">
+        <div class="menu">
+            <a class="btn_menu" type="button"><i class='bx bx-menu'></i></a>
+        </div>
+        <div style="display: none;" class="sub_menu_pop_up">
+
+        </div>
+        <div class="card_circle_first">
+            <div class="card_circle">
+                <img class="img_me" src="assets/img/Akbar Rayensyah.jpeg">
+            </div>
+        </div>
+        <div class="name_card">
+            Akbar Rayensyah
+            <br>
+            <small>
+                (Web Developer)
+            </small>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        // .btn_menu toggle
+        $('.btn_menu').click(function() {
+            $('.sub_menu_pop_up').toggle();
+            showSubMenu();
+        });
+
+        function showSubMenu() {
+            anime({
+                targets: '.sub_menu_pop_up',
+                translateX: 10
+            });
+        }
+    </script>
 </body>
+
 </html>
