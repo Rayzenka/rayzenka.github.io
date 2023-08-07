@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <title>Akbar Rayensyah</title>
 
@@ -83,7 +84,8 @@
         .menu .card_instagram,
         .menu .card_linkedin,
         .menu .card_facebook,
-        .menu .card_twitter {
+        .menu .card_twitter,
+        .menu .card_github {
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -99,7 +101,8 @@
         .menu .card_instagram:hover,
         .menu .card_linkedin:hover,
         .menu .card_facebook:hover,
-        .menu .card_twitter:hover {
+        .menu .card_twitter:hover,
+        .menu .card_github:hover {
             background-color: #000;
             color: #fff;
         }
@@ -122,7 +125,8 @@
             .menu .card_instagram,
             .menu .card_linkedin,
             .menu .card_facebook,
-            .menu .card_twitter {
+            .menu .card_twitter,
+            .menu .card_github {
                 width: 40px;
                 height: 40px;
             }
@@ -160,7 +164,8 @@
             .menu .card_instagram,
             .menu .card_linkedin,
             .menu .card_facebook,
-            .menu .card_twitter {
+            .menu .card_twitter,
+            .menu .card_github {
                 width: 45px;
                 height: 45px;
             }
@@ -204,6 +209,9 @@
             </a>
             <a type="button" id="btn_twitter" class="btn_sosmed card_twitter">
                 <i class='bx bxl-twitter'></i>
+            </a>
+            <a type="button" id="btn_github" class="btn_sosmed card_github">
+                <i class='bx bxl-github'></i>
             </a>
         </div>
     </div>
@@ -339,6 +347,10 @@
 
         $('#btn_twitter').on('click', function() {
             window.open('https://twitter.com/rayensyah999', '_blank');
+        });
+
+        $('#btn_github').on('click', function() {
+            window.open('https://github.com/Rayzenka', '_blank');
         });
     </script>
 </body>
