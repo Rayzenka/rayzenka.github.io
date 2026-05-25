@@ -5,126 +5,471 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="description" content="Personal profile page of Akbar Rayensyah, Web Developer.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
     <title>Akbar Rayensyah</title>
 
     <style>
+        :root {
+            --text: #ffffff;
+            --muted: rgba(255, 255, 255, 0.78);
+            --line: rgba(255, 255, 255, 0.22);
+            --surface: rgba(12, 15, 18, 0.52);
+            --surface-strong: rgba(12, 15, 18, 0.72);
+            --accent: #8fd3ff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            min-height: 100%;
+        }
+
         body {
-            background-image: url('assets/img/bg.jpg');
+            min-height: 100vh;
+            overflow: hidden;
+            background-image:
+                linear-gradient(135deg, rgba(5, 8, 12, 0.78), rgba(5, 8, 12, 0.34) 45%, rgba(5, 8, 12, 0.82)),
+                url('assets/img/bg.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
             background-attachment: fixed;
-            height: 100vh;
-            overflow: hidden;
+            color: var(--text);
+            font-family: 'Inter', Arial, sans-serif;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background: radial-gradient(circle at 50% 43%, transparent 0 16rem, rgba(0, 0, 0, 0.18) 40rem);
+        }
+
+        #three-background {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.72;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 2rem;
+        }
+
+        .menu {
+            position: fixed;
+            top: 1.25rem;
+            left: 1.25rem;
+            z-index: 10;
+        }
+
+        .btn_menu {
+            width: 2.75rem;
+            height: 2.75rem;
+            display: inline-grid;
+            place-items: center;
+            border: 1px solid var(--line);
+            border-radius: 50%;
+            background: var(--surface);
+            color: var(--text);
+            cursor: pointer;
+            font-size: 1.45rem;
+            line-height: 1;
+            backdrop-filter: blur(18px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.24);
+            transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+        }
+
+        .btn_menu:hover,
+        .btn_menu:focus-visible {
+            transform: translateY(-1px);
+            border-color: rgba(255, 255, 255, 0.42);
+            background: var(--surface-strong);
+            outline: none;
+        }
+
+        .sub_menu_pop_up {
+            position: fixed;
+            top: 4.5rem;
+            left: 1.25rem;
+            z-index: 9;
+            min-width: 12.5rem;
+            padding: 0.55rem;
+            border: 1px solid var(--line);
+            border-radius: 0.9rem;
+            background: var(--surface-strong);
+            backdrop-filter: blur(18px);
+            box-shadow: 0 22px 60px rgba(0, 0, 0, 0.32);
+            opacity: 0;
+            transform: translateY(-0.5rem);
+            visibility: hidden;
+            transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
+        }
+
+        .sub_menu_pop_up.is_open {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+
+        .menu_link {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            min-height: 2.55rem;
+            padding: 0 0.75rem;
+            border-radius: 0.6rem;
+            color: var(--muted);
+            font-size: 0.92rem;
+            font-weight: 500;
+            transition: background 160ms ease, color 160ms ease;
+        }
+
+        .menu_link i {
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+
+        .menu_link:hover,
+        .menu_link:focus-visible {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text);
+            outline: none;
+        }
+
+        .profile {
+            width: min(100%, 28rem);
+            display: grid;
+            justify-items: center;
+            text-align: center;
         }
 
         .card_circle_first {
-            width: 265px;
-            height: 265px;
+            width: clamp(13.5rem, 30vw, 17rem);
+            height: clamp(13.5rem, 30vw, 17rem);
+            display: grid;
+            place-items: center;
             border-radius: 50%;
-            background-color: #fff;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            overflow: hidden;
+            background: rgba(255, 255, 255, 0.92);
+            box-shadow:
+                0 24px 70px rgba(0, 0, 0, 0.34),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.72);
         }
 
         .card_circle {
-            width: 250px;
-            height: 250px;
+            width: calc(100% - 1rem);
+            height: calc(100% - 1rem);
             border-radius: 50%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
             overflow: hidden;
+            background: #111;
         }
 
         .img_me {
             width: 100%;
             height: 100%;
+            display: block;
             object-fit: cover;
         }
 
         .name_card {
-            position: absolute;
-            top: 72%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-family: 'Poppins', sans-serif;
-            font-size: 30px;
-            font-weight: 700;
-            color: #fff;
-            /* text-transform: uppercase; */
-            text-align: center;
-            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin-top: 1.55rem;
+            text-shadow: 0 14px 34px rgba(0, 0, 0, 0.58);
         }
 
-        .menu {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            font-size: 30px;
-            color: #fff;
-            cursor: pointer;
-            z-index: 999;
+        .name_card h1 {
+            font-size: clamp(2rem, 6vw, 3rem);
+            line-height: 1.05;
+            font-weight: 800;
+            letter-spacing: 0;
         }
 
-        .sub_menu_pop_up {
-            position: absolute;
-            top: 25px;
-            left: 50px;
-            width: 100px;
-            height: 100px;
-            /* rounded */
-            border-radius: 0px 20px 20px 20px;
-            background-color: #fff;
-            z-index: 999;
+        .name_card p {
+            margin-top: 0.7rem;
+            color: var(--muted);
+            font-size: clamp(0.95rem, 2vw, 1.08rem);
+            font-weight: 600;
+        }
+
+        .status {
+            margin-top: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0.55rem 0.85rem;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: rgba(8, 12, 16, 0.42);
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 0.85rem;
+            font-weight: 500;
+            backdrop-filter: blur(14px);
+        }
+
+        .status::before {
+            content: "";
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 50%;
+            background: #66e3a9;
+            box-shadow: 0 0 0 0.25rem rgba(102, 227, 169, 0.16);
+        }
+
+        .social_links {
+            margin-top: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.7rem;
+        }
+
+        .social_link {
+            width: 2.65rem;
+            height: 2.65rem;
+            display: inline-grid;
+            place-items: center;
+            border: 1px solid var(--line);
+            border-radius: 50%;
+            background: rgba(8, 12, 16, 0.38);
+            color: rgba(255, 255, 255, 0.86);
+            font-size: 1.18rem;
+            backdrop-filter: blur(14px);
+            transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease;
+        }
+
+        .social_link:hover,
+        .social_link:focus-visible {
+            transform: translateY(-2px);
+            border-color: rgba(143, 211, 255, 0.58);
+            background: rgba(143, 211, 255, 0.13);
+            color: #ffffff;
+            outline: none;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                background-attachment: scroll;
+            }
+
+            .content {
+                padding: 1.25rem;
+            }
+
+            .menu {
+                top: 1rem;
+                left: 1rem;
+            }
+
+            .sub_menu_pop_up {
+                top: 4.1rem;
+                left: 1rem;
+                right: 1rem;
+                min-width: auto;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="content">
-        <div class="menu">
-            <a class="btn_menu" type="button"><i class='bx bx-menu'></i></a>
-        </div>
-        <div style="display: none;" class="sub_menu_pop_up">
+    <canvas id="three-background" aria-hidden="true"></canvas>
 
+    <main class="content" aria-label="Personal profile">
+        <nav class="menu" aria-label="Main menu">
+            <button class="btn_menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="profile-menu">
+                <i class="bx bx-menu" aria-hidden="true"></i>
+            </button>
+        </nav>
+
+        <div id="profile-menu" class="sub_menu_pop_up" aria-hidden="true">
+            <a class="menu_link" href="#profile">
+                <i class="bx bx-user" aria-hidden="true"></i>
+                Profile
+            </a>
+            <a class="menu_link" href="https://github.com/Rayzenka" target="_blank" rel="noopener">
+                <i class="bx bxl-github" aria-hidden="true"></i>
+                GitHub
+            </a>
+            <a class="menu_link" href="https://www.linkedin.com/in/akbar-rayensyah-139831184/" target="_blank" rel="noopener">
+                <i class="bx bxl-linkedin-square" aria-hidden="true"></i>
+                LinkedIn
+            </a>
+            <a class="menu_link" href="https://www.instagram.com/rayensyah999/" target="_blank" rel="noopener">
+                <i class="bx bxl-instagram" aria-hidden="true"></i>
+                Instagram
+            </a>
+            <a class="menu_link" href="https://www.facebook.com/akbar.rayensyah/" target="_blank" rel="noopener">
+                <i class="bx bxl-facebook" aria-hidden="true"></i>
+                Facebook
+            </a>
+            <a class="menu_link" href="https://twitter.com/rayensyah999" target="_blank" rel="noopener">
+                <i class="bx bxl-twitter" aria-hidden="true"></i>
+                Twitter
+            </a>
         </div>
-        <div class="card_circle_first">
-            <div class="card_circle">
-                <img class="img_me" src="assets/img/Akbar Rayensyah.jpeg">
+
+        <section id="profile" class="profile">
+            <div class="card_circle_first">
+                <div class="card_circle">
+                    <img class="img_me" src="assets/img/Akbar Rayensyah.jpeg" alt="Akbar Rayensyah">
+                </div>
             </div>
-        </div>
-        <div class="name_card">
-            Akbar Rayensyah
-            <br>
-            <small>
-                (Web Developer)
-            </small>
-        </div>
-    </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <div class="name_card">
+                <h1>Akbar Rayensyah</h1>
+                <p>Web Developer</p>
+            </div>
+
+            <div class="status">Personal Portfolio</div>
+
+            <div class="social_links" aria-label="Social media links">
+                <a class="social_link" href="https://github.com/rayzenka" target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class="bx bxl-github" aria-hidden="true"></i>
+                </a>
+                <a class="social_link" href="https://www.linkedin.com/in/akbar-rayensyah-139831184/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="bx bxl-linkedin-square" aria-hidden="true"></i>
+                </a>
+                <a class="social_link" href="https://www.instagram.com/rayensyah999/" target="_blank" rel="noopener" aria-label="Instagram">
+                    <i class="bx bxl-instagram" aria-hidden="true"></i>
+                </a>
+                <a class="social_link" href="https://www.facebook.com/akbar.rayensyah/" target="_blank" rel="noopener" aria-label="Facebook">
+                    <i class="bx bxl-facebook" aria-hidden="true"></i>
+                </a>
+                <a class="social_link" href="https://twitter.com/rayensyah999" target="_blank" rel="noopener" aria-label="Twitter">
+                    <i class="bx bxl-twitter" aria-hidden="true"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
     <script>
-        // .btn_menu toggle
-        $('.btn_menu').click(function() {
-            $('.sub_menu_pop_up').toggle();
-            showSubMenu();
+        const menuButton = document.querySelector('.btn_menu');
+        const profileMenu = document.querySelector('#profile-menu');
+
+        function closeMenu() {
+            profileMenu.classList.remove('is_open');
+            profileMenu.setAttribute('aria-hidden', 'true');
+            menuButton.setAttribute('aria-expanded', 'false');
+        }
+
+        menuButton.addEventListener('click', () => {
+            const isOpen = profileMenu.classList.toggle('is_open');
+            profileMenu.setAttribute('aria-hidden', String(!isOpen));
+            menuButton.setAttribute('aria-expanded', String(isOpen));
         });
 
-        function showSubMenu() {
-            anime({
-                targets: '.sub_menu_pop_up',
-                translateX: 10
+        document.addEventListener('click', (event) => {
+            const clickedMenu = profileMenu.contains(event.target) || menuButton.contains(event.target);
+
+            if (!clickedMenu) {
+                closeMenu();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeMenu();
+            }
+        });
+
+        function initThreeBackground() {
+            if (typeof THREE === 'undefined') {
+                return;
+            }
+
+            const canvas = document.querySelector('#three-background');
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 100);
+            const renderer = new THREE.WebGLRenderer({
+                canvas,
+                alpha: true,
+                antialias: true
             });
+            const pointer = { x: 0, y: 0 };
+            const count = 120;
+            const positions = new Float32Array(count * 3);
+
+            camera.position.z = 8;
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            renderer.setSize(window.innerWidth, window.innerHeight);
+
+            for (let i = 0; i < count; i++) {
+                const index = i * 3;
+                positions[index] = (Math.random() - 0.5) * 14;
+                positions[index + 1] = (Math.random() - 0.5) * 8;
+                positions[index + 2] = (Math.random() - 0.5) * 5;
+            }
+
+            const geometry = new THREE.BufferGeometry();
+            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+            const particles = new THREE.Points(
+                geometry,
+                new THREE.PointsMaterial({
+                    color: 0x8fd3ff,
+                    size: 0.028,
+                    transparent: true,
+                    opacity: 0.58
+                })
+            );
+
+            const wireGeometry = new THREE.TorusGeometry(2.45, 0.004, 12, 96);
+            const wireMaterial = new THREE.MeshBasicMaterial({
+                color: 0xffffff,
+                transparent: true,
+                opacity: 0.14
+            });
+            const ring = new THREE.Mesh(wireGeometry, wireMaterial);
+
+            ring.rotation.x = Math.PI * 0.64;
+            scene.add(particles, ring);
+
+            window.addEventListener('pointermove', (event) => {
+                pointer.x = (event.clientX / window.innerWidth - 0.5) * 0.22;
+                pointer.y = (event.clientY / window.innerHeight - 0.5) * 0.22;
+            });
+
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+
+            function animate() {
+                particles.rotation.y += 0.0008;
+                particles.rotation.x += 0.00035;
+                ring.rotation.z += 0.0012;
+                scene.rotation.x += (pointer.y - scene.rotation.x) * 0.025;
+                scene.rotation.y += (pointer.x - scene.rotation.y) * 0.025;
+                renderer.render(scene, camera);
+                requestAnimationFrame(animate);
+            }
+
+            animate();
         }
+
+        initThreeBackground();
     </script>
 </body>
 
