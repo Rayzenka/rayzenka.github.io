@@ -5,11 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<<<<<<< HEAD
     <meta name="description" content="Personal profile page of Akbar Rayensyah, Web Developer.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+=======
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+>>>>>>> b2def13e09d47c3d6bac25a85f9de9b5da12fa47
 
     <title>Akbar Rayensyah</title>
 
@@ -43,6 +48,7 @@
             background-repeat: no-repeat;
             background-position: center;
             background-attachment: fixed;
+<<<<<<< HEAD
             color: var(--text);
             font-family: 'Inter', Arial, sans-serif;
         }
@@ -164,6 +170,8 @@
             display: grid;
             justify-items: center;
             text-align: center;
+=======
+>>>>>>> b2def13e09d47c3d6bac25a85f9de9b5da12fa47
         }
 
         .card_circle_first {
@@ -172,10 +180,20 @@
             display: grid;
             place-items: center;
             border-radius: 50%;
+<<<<<<< HEAD
             background: rgba(255, 255, 255, 0.92);
             box-shadow:
                 0 24px 70px rgba(0, 0, 0, 0.34),
                 inset 0 0 0 1px rgba(255, 255, 255, 0.72);
+=======
+            background-color: #fff;
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+>>>>>>> b2def13e09d47c3d6bac25a85f9de9b5da12fa47
         }
 
         .card_circle {
@@ -191,9 +209,14 @@
             height: 100%;
             display: block;
             object-fit: cover;
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
         }
 
         .name_card {
+<<<<<<< HEAD
             margin-top: 1.55rem;
             text-shadow: 0 14px 34px rgba(0, 0, 0, 0.58);
         }
@@ -287,11 +310,141 @@
                 right: 1rem;
                 min-width: auto;
             }
+=======
+            position: absolute;
+            top: 57%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Poppins', sans-serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #fff;
+            text-align: center;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .content {
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            text-align: center;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .menu .card_instagram,
+        .menu .card_linkedin,
+        .menu .card_facebook,
+        .menu .card_twitter,
+        .menu .card_github {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #fff;
+            margin: 0 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .menu .card_instagram:hover,
+        .menu .card_linkedin:hover,
+        .menu .card_facebook:hover,
+        .menu .card_twitter:hover,
+        .menu .card_github:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        @media screen and (max-width: 600px) {
+            .card_circle_first {
+                width: 200px;
+                height: 200px;
+            }
+
+            .card_circle {
+                width: 185px;
+                height: 185px;
+            }
+
+            .name_card {
+                font-size: 20px;
+            }
+
+            .menu .card_instagram,
+            .menu .card_linkedin,
+            .menu .card_facebook,
+            .menu .card_twitter,
+            .menu .card_github {
+                width: 40px;
+                height: 40px;
+            }
+
+            #particles-js {
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                pointer-events: none;
+            }
+        }
+
+        @media screen and (min-width: 600px) and (max-width: 900px) {
+            .card_circle_first {
+                top: 40%;
+                width: 250px;
+                height: 250px;
+            }
+
+            .card_circle {
+                width: 235px;
+                height: 235px;
+            }
+
+            .name_card {
+                font-size: 25px;
+                top: 80%;
+            }
+
+            .content {
+                top: 97%;
+            }
+
+            .menu .card_instagram,
+            .menu .card_linkedin,
+            .menu .card_facebook,
+            .menu .card_twitter,
+            .menu .card_github {
+                width: 45px;
+                height: 45px;
+            }
+
+            #particles-js {
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+            }
+        }
+
+        #particles-js {
+            width: 100%;
+            height: 100%;
+>>>>>>> b2def13e09d47c3d6bac25a85f9de9b5da12fa47
         }
     </style>
 </head>
 
 <body>
+<<<<<<< HEAD
     <canvas id="three-background" aria-hidden="true"></canvas>
 
     <main class="content" aria-label="Personal profile">
@@ -470,6 +623,176 @@
         }
 
         initThreeBackground();
+=======
+    <div class="card_circle_first animate__animated animate__fadeIn">
+        <div class="card_circle">
+            <img class="img_me" src="assets/img/me.jpeg">
+        </div>
+    </div>
+    <div class="name_card animate__animated animate__fadeIn">
+        Akbar Rayensyah
+        <br>
+        <small>
+            (Web Developer)
+        </small>
+    </div>
+    <div class="content">
+        <div class="menu animate__animated animate__fadeInLeft">
+            <a type="button" id="btn_instagram" class="btn_sosmed card_instagram">
+                <i class='bx bxl-instagram'></i>
+            </a>
+            <a type="button" id="btn_linkedin" class="btn_sosmed card_linkedin">
+                <i class='bx bxl-linkedin'></i>
+            </a>
+            <a type="button" id="btn_facebook" class="btn_sosmed card_facebook">
+                <i class='bx bxl-facebook'></i>
+            </a>
+            <a type="button" id="btn_twitter" class="btn_sosmed card_twitter">
+                <i class='bx bxl-twitter'></i>
+            </a>
+            <a type="button" id="btn_github" class="btn_sosmed card_github">
+                <i class='bx bxl-github'></i>
+            </a>
+        </div>
+    </div>
+
+    <div id="particles-js"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script>
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 130,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#fff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    },
+                    "image": {
+                        "src": "img/github.svg",
+                        "width": 100,
+                        "height": 100
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 10,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": false,
+                    "distance": 500,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 2
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "bottom",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "bubble"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 0.5
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 4,
+                        "duration": 0.3,
+                        "opacity": 1,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        })
+
+        $('#btn_instagram').on('click', function() {
+            window.open('https://www.instagram.com/rayensyah999/', '_blank');
+        });
+
+        $('#btn_linkedin').on('click', function() {
+            window.open('https://www.linkedin.com/in/akbar-rayensyah-139831184/', '_blank');
+        });
+
+        $('#btn_facebook').on('click', function() {
+            window.open('https://www.facebook.com/akbar.rayensyah', '_blank');
+        });
+
+        $('#btn_twitter').on('click', function() {
+            window.open('https://twitter.com/rayensyah999', '_blank');
+        });
+
+        $('#btn_github').on('click', function() {
+            window.open('https://github.com/Rayzenka', '_blank');
+        });
+>>>>>>> b2def13e09d47c3d6bac25a85f9de9b5da12fa47
     </script>
 </body>
 
